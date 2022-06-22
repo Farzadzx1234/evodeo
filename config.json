@@ -3,7 +3,7 @@
   "YOUTUBE_API_KEY": "AIzaSyCmYdSPkx3nptqZfkt-wZLddz4T7prSXaQ",
   "SOUNDCLOUD_CLIENT_ID": "",
   "MAX_PLAYLIST_SIZE": 50,
-  "PREFIX": "+",
+  "PREFIX": "1",
   "PRUNING": true,
   "LOCALE": "en",
   "STAY_TIME": 30,
