@@ -87,6 +87,7 @@ module.exports = {
       var playingMessage = await queue.textChannel.send(
         i18n.__mf("play.startedPlaying", { title: song.title, url: song.url })
       );
+      await playingMessage.react("⏭");
       await playingMessage.react("⏯");
       await playingMessage.react("🔇");
       await playingMessage.react("🔉");
@@ -172,7 +173,12 @@ module.exports = {
           reaction.users.remove(user).catch(console.error);
           if (!canModifyQueue(member)) return i18n.__("common.errorNotChannel");
           queue.loop = !queue.loop;
-          queue.textChannel
+            .send(
+              i18n.__mf("play.loopSong", {
+                author: user,
+                loop: queue.loop ? i18n.__("common.on") : i18n.__("common.off")
+              })
+            )
             .catch(console.error);
           break;
 
