@@ -87,7 +87,6 @@ module.exports = {
       var playingMessage = await queue.textChannel.send(
         i18n.__mf("play.startedPlaying", { title: song.title, url: song.url })
       );
-      await playingMessage.react("⏭");
       await playingMessage.react("⏯");
       await playingMessage.react("🔇");
       await playingMessage.react("🔉");
@@ -108,7 +107,7 @@ module.exports = {
       const member = message.guild.member(user);
 
       switch (reaction.emoji.name) {
-        case "⏭":
+        case "":
           queue.playing = true;
           reaction.users.remove(user).catch(console.error);
           if (!canModifyQueue(member)) return i18n.__("common.errorNotChannel");
