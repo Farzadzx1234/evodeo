@@ -49,7 +49,30 @@
 		"description": "Show the bot's average ping",
 		"result": "📈 Average ping to API: {ping} ms"
 	},
-
+	"play": {
+		"description": "Plays audio from YouTube or Soundcloud",
+		"errorNotChannel": "You need to join a voice channel first!",
+		"errorNotInSameChannel": "You must be in the same channel as {user}",
+		"usageReply": "Usage: {prefix}play <YouTube URL | Video Name | Soundcloud URL>",
+		"missingPermissionConnect": "Cannot connect to voice channel, missing permissions",
+		"missingPermissionSpeak": "I cannot speak in this voice channel, make sure I have the proper permissions!",
+		"queueAdded": "✅ **{title}** has been added to the queue by <@{author}>",
+		"cantJoinChannel": "Could not join the channel: {error}",
+		"queueEnded": "<:892035772415352833:916629480372596786>〢**Music queue ended**.",
+		"queueError": "Error: {error}",
+		"startedPlaying": "<:891215369279270913:916629480066404353>〢Started playing: **{title}** {url}",
+		"skipSong": "<@{author}> <:25198200:916662970833072158>〢**skipped the song**",
+		"pauseSong": "<@{author}> <:pausew:881126848354979860>〢**paused the music**.",
+		"resumeSong": "<@{author}> <:892048181242761227:916629480490029106>〢**resumed the music!**",
+		"unmutedSong": "<@{author}> <:R_:916660248897552415>〢**unmuted the music!**",
+		"mutedSong": "<@{author}> <:R7:918103496446853130>〢**muted the music**!",
+		"decreasedVolume": ,
+		"increasedVolume": ,
+		"loopSong": ,
+		"stopSong": ,
+		"leaveChannel": "<a:892077597998067763:916629480817172490> **Leaving voice channel...**",
+		"songNotFound": "<:892035772415352833:916629480372596786> **Audio Not Found**"
+		
 	"playlist": {
 		"description": "Play a playlist from youtube",
 		"usagesReply": "Usage: {prefix}playlist <YouTube Playlist URL | Playlist Name>",
