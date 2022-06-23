@@ -173,6 +173,7 @@ module.exports = {
           reaction.users.remove(user).catch(console.error);
           if (!canModifyQueue(member)) return i18n.__("common.errorNotChannel");
           queue.loop = !queue.loop;
+          queue.textChannel
             .send(
               i18n.__mf("play.loopSong", {
                 author: user,
