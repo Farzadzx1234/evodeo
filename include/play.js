@@ -173,11 +173,6 @@ module.exports = {
           if (!canModifyQueue(member)) return i18n.__("common.errorNotChannel");
           queue.loop = !queue.loop;
           queue.textChannel
-            .send(
-              i18n.__mf("play.loopSong", {
-                author: user,
-                loop: queue.loop ? i18n.__("common.on") : i18n.__("common.off")
-              })
             )
             .catch(console.error);
           break;
