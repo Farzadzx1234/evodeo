@@ -173,7 +173,6 @@ module.exports = {
           if (!canModifyQueue(member)) return i18n.__("common.errorNotChannel");
           queue.loop = !queue.loop;
           queue.textChannel
-            )
             .catch(console.error);
           break;
 
