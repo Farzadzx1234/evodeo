@@ -87,7 +87,6 @@ module.exports = {
       var playingMessage = await queue.textChannel.send(
         i18n.__mf("play.startedPlaying", { title: song.title, url: song.url })
       );
-      await playingMessage.react("😑");
       await playingMessage.react("<:pausew:881126848354979860>");
       await playingMessage.react("<:R7:918103496446853130>");
       await playingMessage.react("🔉");
