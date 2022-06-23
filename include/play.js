@@ -87,13 +87,13 @@ module.exports = {
       var playingMessage = await queue.textChannel.send(
         i18n.__mf("play.startedPlaying", { title: song.title, url: song.url })
       );
-      await playingMessage.react("⏭");
-      await playingMessage.react("⏯");
-      await playingMessage.react("🔇");
+      await playingMessage.react("");
+      await playingMessage.react("<:pausew:881126848354979860>");
+      await playingMessage.react("<:R7:918103496446853130>");
       await playingMessage.react("🔉");
       await playingMessage.react("🔊");
-      await playingMessage.react("🔁");
-      await playingMessage.react("⏹");
+      await playingMessage.react("<:R1:916660594009079878>");
+      await playingMessage.react("<:sign_stop_PNG25621:916663579317518347>");
     } catch (error) {
       console.error(error);
     }
@@ -108,7 +108,7 @@ module.exports = {
       const member = message.guild.member(user);
 
       switch (reaction.emoji.name) {
-        case "⏭":
+        case "":
           queue.playing = true;
           reaction.users.remove(user).catch(console.error);
           if (!canModifyQueue(member)) return i18n.__("common.errorNotChannel");
@@ -117,7 +117,7 @@ module.exports = {
           collector.stop();
           break;
 
-        case "⏯":
+        case "<:pausew:881126848354979860>":
           reaction.users.remove(user).catch(console.error);
           if (!canModifyQueue(member)) return i18n.__("common.errorNotChannel");
           if (queue.playing) {
@@ -131,7 +131,7 @@ module.exports = {
           }
           break;
 
-        case "🔇":
+        case "<:R7:918103496446853130>":
           reaction.users.remove(user).catch(console.error);
           if (!canModifyQueue(member)) return i18n.__("common.errorNotChannel");
           if (queue.volume <= 0) {
@@ -169,7 +169,7 @@ module.exports = {
             .catch(console.error);
           break;
 
-        case "🔁":
+        case "<:R1:916660594009079878>":
           reaction.users.remove(user).catch(console.error);
           if (!canModifyQueue(member)) return i18n.__("common.errorNotChannel");
           queue.loop = !queue.loop;
@@ -183,7 +183,7 @@ module.exports = {
             .catch(console.error);
           break;
 
-        case "⏹":
+        case "<:sign_stop_PNG25621:916663579317518347>":
           reaction.users.remove(user).catch(console.error);
           if (!canModifyQueue(member)) return i18n.__("common.errorNotChannel");
           queue.songs = [];
