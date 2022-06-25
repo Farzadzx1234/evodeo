@@ -60,7 +60,7 @@
 		"cantJoinChannel": "Could not join the channel: {error}",
 		"queueEnded": "<:892035772415352833:916629480372596786>〢**Music queue ended**.",
 		"queueError": "Error: {error}",
-		"startedPlaying": "<:891215369279270913:916629480066404353>〢Started playing: **{title}** {url}",
+		"startedPlaying": "<:891215369279270913:916629480066404353>〢Started playing: `{title}` {url} ",
 		"skipSong": "<@{author}> <:25198200:916662970833072158>〢**skipped the song**",
 		"pauseSong": "<@{author}> <:pausew:881126848354979860>〢**paused the music**.",
 		"resumeSong": "<@{author}> <:892048181242761227:916629480490029106>〢**resumed the music!**",
@@ -180,5 +180,6 @@
 	"\n **Elite Bot\nDeveloped By AnimeClub(Vodka) Team\n\nBot Prefix ➜ `-`\n\n🇱🇷〢 Just English\n🇮🇷〢Persian (Coming Soon)\n\nFor Bot Invite ➜ `-invite`\nNeed help? Click `🗣️ Server Support` Button\n\nBest ~ Farzad**\n\n\n📌 Help Panel 📌\n": "\n **Elite Bot\nDeveloped By AnimeClub(Vodka) Team\n\nBot Prefix ➜ `-`\n\n🇱🇷〢 Just English\n🇮🇷〢Persian (Coming Soon)\n\nFor Bot Invite ➜ `-invite`\nNeed help? Click `🗣️ Server Support` Button\n\nBest ~ Farzad**\n\n\n📌 Help Panel 📌\n",
 	"\n **Elite Bot\nDeveloped By AnimeClub(Vodka) Team\n\nBot Prefix ➜ `-`\n\n🇱🇷〢 Just English\n🇮🇷〢Persian (Coming Soon)\n\nFor Bot Invite ➜ `-invite`\nNeed help? Click `🗣️ Server Support` Button\n\nBest ~ Farzad**\n\n📌 **Help Panel** 📌\n": "\n **Elite Bot\nDeveloped By AnimeClub(Vodka) Team\n\nBot Prefix ➜ `-`\n\n🇱🇷〢 Just English\n🇮🇷〢Persian (Coming Soon)\n\nFor Bot Invite ➜ `-invite`\nNeed help? Click `🗣️ Server Support` Button\n\nBest ~ Farzad**\n\n📌 **Help Panel** 📌\n",
 	"\n **Elite Bot\nDeveloped By AnimeClub(Vodka) Team\n\nSupported ": " <:R8:918104180516855888>〢YouTube \n<:R9:918104195503099954>〢SoundCloud \nBot Prefix ➜ `-`\n\n🇱🇷〢 Just English\n🇮🇷〢Persian (Coming Soon)\n\nFor Bot Invite ➜ `-invite`\nNeed help? Click `🗣️ Server Support` Button\n\nBest ~ Farzad**\n\n📌 **Help Panel** 📌\n",
-	"**Elite Bot\nDeveloped By AnimeClub(Vodka) Team\n\nSupported ": " <:R8:918104180516855888>〢YouTube \n<:R9:918104195503099954>〢SoundCloud\n\nBot Prefix ➜ `-`\n\n🇱🇷〢 Just English\n🇮🇷〢Persian (Coming Soon)\n\nFor Bot Invite ➜ `-invite`\n\nBest ~ Farzad**\n\n📌 **Help Panel** 📌\n"
+	"**Elite Bot\nDeveloped By AnimeClub(Vodka) Team\n\nSupported ": " <:R8:918104180516855888>〢YouTube \n<:R9:918104195503099954>〢SoundCloud\n\nBot Prefix ➜ `-`\n\n🇱🇷〢 Just English\n🇮🇷〢Persian (Coming Soon)\n\nFor Bot Invite ➜ `-invite`\n\nBest ~ Farzad**\n\n📌 **Help Panel** 📌\n",
+	"{ title": " song.title, url: song.url }"
 }
