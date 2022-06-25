@@ -125,7 +125,7 @@ module.exports = {
             
           } else {
             queue.playing = !queue.playing;
-            queue.connection.dispatcher.resume(false);
+            queue.connection.dispatcher.resume(true);
             
           }
           break;
