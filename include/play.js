@@ -87,12 +87,12 @@ module.exports = {
       var playingMessage = await queue.textChannel.send(
         i18n.__mf("play.startedPlaying", { title: song.title, url: song.url })
       );
-      await playingMessage.react("⏯");
-      await playingMessage.react("🔇");
-      await playingMessage.react("🔉");
-      await playingMessage.react("🔊");
-      await playingMessage.react("🔁");
-      await playingMessage.react("⏹");
+      await playingMessage.react("989820950239379467");
+      await playingMessage.react("989821010687705138");
+      await playingMessage.react("989821171853824020");
+      await playingMessage.react("989821235343024168");
+      await playingMessage.react("989821299100647434");
+      await playingMessage.react("989821329765171222");
     } catch (error) {
       console.error(error);
     }
@@ -106,87 +106,86 @@ module.exports = {
       if (!queue) return;
       const member = message.guild.member(user);
 
-      switch (reaction.emoji.name) {
-        case "":
+      switch (reaction.emoji.id) {
+        case "⏭":
           queue.playing = true;
           reaction.users.remove(user).catch(console.error);
           if (!canModifyQueue(member)) return i18n.__("common.errorNotChannel");
           queue.connection.dispatcher.end();
-          queue.textChannel.send(i18n.__mf("play.skipSong", { author: user })).catch(console.error);
+          
           collector.stop();
           break;
 
-        case "⏯":
+        case "989820950239379467":
           reaction.users.remove(user).catch(console.error);
           if (!canModifyQueue(member)) return i18n.__("common.errorNotChannel");
           if (queue.playing) {
             queue.playing = !queue.playing;
             queue.connection.dispatcher.pause(true);
-            queue.textChannel.send(i18n.__mf("play.pauseSong", { author: user })).catch(console.error);
+            
           } else {
             queue.playing = !queue.playing;
-            queue.connection.dispatcher.resume();
-            queue.textChannel.send(i18n.__mf("play.resumeSong", { author: user })).catch(console.error);
+            queue.connection.dispatcher.resume(false);
+            
           }
           break;
 
-        case "🔇":
+           case "":
+          reaction.users.remove(user).catch(console.error);
+          if (!canModifyQueue(member)) return i18n.__("common.errorNotChannel");
+           if (queue.playing) {
+            queue.playing = !queue.playing;
+            queue.connection.dispatcher.pause(true);
+            
+          } else {
+            queue.playing = !queue.playing;
+            queue.connection.dispatcher.resume(false);
+            
+          }
+          break;
+          
+        case "989821010687705138":
           reaction.users.remove(user).catch(console.error);
           if (!canModifyQueue(member)) return i18n.__("common.errorNotChannel");
           if (queue.volume <= 0) {
             queue.volume = 100;
             queue.connection.dispatcher.setVolumeLogarithmic(100 / 100);
-            queue.textChannel.send(i18n.__mf("play.unmutedSong", { author: user })).catch(console.error);
+            
           } else {
             queue.volume = 0;
             queue.connection.dispatcher.setVolumeLogarithmic(0);
-            queue.textChannel.send(i18n.__mf("play.mutedSong", { author: user })).catch(console.error);
           }
           break;
 
-        case "🔉":
+        case "989821171853824020":
           reaction.users.remove(user).catch(console.error);
           if (queue.volume == 0) return;
           if (!canModifyQueue(member)) return i18n.__("common.errorNotChannel");
           if (queue.volume - 10 <= 0) queue.volume = 0;
           else queue.volume = queue.volume - 10;
           queue.connection.dispatcher.setVolumeLogarithmic(queue.volume / 100);
-          queue.textChannel
-            .send(i18n.__mf("play.decreasedVolume", { author: user, volume: queue.volume }))
-            .catch(console.error);
           break;
 
-        case "🔊":
+        case "989821235343024168":
           reaction.users.remove(user).catch(console.error);
           if (queue.volume == 100) return;
           if (!canModifyQueue(member)) return i18n.__("common.errorNotChannel");
           if (queue.volume + 10 >= 100) queue.volume = 100;
           else queue.volume = queue.volume + 10;
           queue.connection.dispatcher.setVolumeLogarithmic(queue.volume / 100);
-          queue.textChannel
-            .send(i18n.__mf("play.increasedVolume", { author: user, volume: queue.volume }))
-            .catch(console.error);
           break;
 
-        case "🔁":
+        case "989821299100647434":
           reaction.users.remove(user).catch(console.error);
           if (!canModifyQueue(member)) return i18n.__("common.errorNotChannel");
           queue.loop = !queue.loop;
-          queue.textChannel
-            .send(
-              i18n.__mf("play.loopSong", {
-                author: user,
-                loop: queue.loop ? i18n.__("common.on") : i18n.__("common.off")
-              })
-            )
-            .catch(console.error);
           break;
 
-        case "⏹":
+        case "989821329765171222":
           reaction.users.remove(user).catch(console.error);
           if (!canModifyQueue(member)) return i18n.__("common.errorNotChannel");
           queue.songs = [];
-          queue.textChannel.send(i18n.__mf("play.stopSong", { author: user })).catch(console.error);
+        
           try {
             queue.connection.dispatcher.end();
           } catch (error) {
