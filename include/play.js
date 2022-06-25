@@ -125,7 +125,7 @@ module.exports = {
             
           } else {
             queue.playing = !queue.playing;
-            queue.connection.dispatcher.resume(true);
+            queue.connection.dispatcher.resume(false);
             
           }
           break;
@@ -139,7 +139,7 @@ module.exports = {
             
           } else {
             queue.playing = !queue.playing;
-            queue.connection.dispatcher.resume(true);
+            queue.connection.dispatcher.resume(false);
             
           }
           break;
