@@ -11,7 +11,7 @@ module.exports = {
     let helpEmbed = new MessageEmbed()
       .setTitle(i18n.__mf("Music Help panel", { botname: message.client.user.username }))
       .setDescription(i18n.__("**Really Useful Commands**"))
-    .setImage('https://cdn.discordapp.com/attachments/989314460164440154/989518971327877180/1_2-2.png') 
+    .setImage('https://cdn.discordapp.com/attachments/985145928501567538/989924167044440064/music.png') 
       .setColor("#ffffff");
     commands.forEach((cmd) => {
       helpEmbed.addField(
