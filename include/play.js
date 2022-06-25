@@ -88,7 +88,6 @@ module.exports = {
         i18n.__mf("play.startedPlaying", { title: song.title, url: song.url })
       );
       await playingMessage.react("989820950239379467");
-      await playingMessage.react("989619598502543462");
       await playingMessage.react("989821010687705138");
       await playingMessage.react("989821171853824020");
       await playingMessage.react("989821235343024168");
@@ -117,7 +116,7 @@ module.exports = {
           collector.stop();
           break;
 
-        case "989820950239379467":
+        case "":
           reaction.users.remove(user).catch(console.error);
           if (!canModifyQueue(member)) return i18n.__("common.errorNotChannel");
           if (queue.playing) {
@@ -131,7 +130,7 @@ module.exports = {
           }
           break;
 
-           case "989619598502543462":
+           case "989820950239379467":
           reaction.users.remove(user).catch(console.error);
           if (!canModifyQueue(member)) return i18n.__("common.errorNotChannel");
            if (queue.playing) {
