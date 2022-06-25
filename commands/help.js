@@ -2,8 +2,8 @@ const { MessageEmbed } = require("discord.js");
 const i18n = require("../util/i18n");
 
 module.exports = {
-  name: "mhelp",
-  aliases: ["mh"],
+  name: "help",
+  aliases: ["h"],
   description: i18n.__("help.description"),
   execute(message) {
     let commands = message.client.commands.array();
