@@ -126,6 +126,18 @@ module.exports = {
             queue.connection.dispatcher.resume();
           }
           break;
+          
+         case "990527382081384478":
+          reaction.users.remove(user).catch(console.error);
+          if (!canModifyQueue(member)) return i18n.__("common.errorNotChannel");
+          if (queue.playing) {
+            queue.playing = !queue.playing;
+            queue.connection.dispatcher.pause();
+          } else {
+            queue.playing = !queue.playing;
+            queue.connection.dispatcher.resume(true);
+          }
+          break;
 
         case "989821010687705138":
           reaction.users.remove(user).catch(console.error);
