@@ -107,50 +107,32 @@ module.exports = {
       const member = message.guild.member(user);
 
       switch (reaction.emoji.id) {
-        case "⏭":
+        case "":
           queue.playing = true;
           reaction.users.remove(user).catch(console.error);
           if (!canModifyQueue(member)) return i18n.__("common.errorNotChannel");
           queue.connection.dispatcher.end();
-          
           collector.stop();
           break;
 
-        case "":
+        case "989820950239379467":
           reaction.users.remove(user).catch(console.error);
           if (!canModifyQueue(member)) return i18n.__("common.errorNotChannel");
           if (queue.playing) {
             queue.playing = !queue.playing;
             queue.connection.dispatcher.pause(true);
-            
-          } else {
-            queue.playing = !queue.playing;
-            queue.connection.dispatcher.resume(false);
-            
-          }
-          break;
-
-           case "989820950239379467":
-          reaction.users.remove(user).catch(console.error);
-          if (!canModifyQueue(member)) return i18n.__("common.errorNotChannel");
-           if (queue.playing) {
-            queue.playing = !queue.playing;
-            queue.connection.dispatcher.pause(false);
-            
           } else {
             queue.playing = !queue.playing;
             queue.connection.dispatcher.resume();
-            
           }
           break;
-          
+
         case "989821010687705138":
           reaction.users.remove(user).catch(console.error);
           if (!canModifyQueue(member)) return i18n.__("common.errorNotChannel");
           if (queue.volume <= 0) {
             queue.volume = 100;
             queue.connection.dispatcher.setVolumeLogarithmic(100 / 100);
-            
           } else {
             queue.volume = 0;
             queue.connection.dispatcher.setVolumeLogarithmic(0);
@@ -164,6 +146,7 @@ module.exports = {
           if (queue.volume - 10 <= 0) queue.volume = 0;
           else queue.volume = queue.volume - 10;
           queue.connection.dispatcher.setVolumeLogarithmic(queue.volume / 100);
+          queue.textChannel
           break;
 
         case "989821235343024168":
@@ -173,19 +156,20 @@ module.exports = {
           if (queue.volume + 10 >= 100) queue.volume = 100;
           else queue.volume = queue.volume + 10;
           queue.connection.dispatcher.setVolumeLogarithmic(queue.volume / 100);
+          queue.textChannel
           break;
 
         case "989821299100647434":
           reaction.users.remove(user).catch(console.error);
           if (!canModifyQueue(member)) return i18n.__("common.errorNotChannel");
           queue.loop = !queue.loop;
+          queue.textChannel
           break;
 
         case "989821329765171222":
           reaction.users.remove(user).catch(console.error);
           if (!canModifyQueue(member)) return i18n.__("common.errorNotChannel");
           queue.songs = [];
-        
           try {
             queue.connection.dispatcher.end();
           } catch (error) {
